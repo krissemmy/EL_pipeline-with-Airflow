@@ -105,9 +105,12 @@ docker-compose up
 docker ps
 ```
 8. You can connect to your Airflow webserver interface at http://localhost:8080/
-9.Default username and password is 
+9. Default username and password is 
+
 username : airflow
+
 password : airflow
 
 (you can change it in your compose file)
-10. you can now run the dag
+
+11. you can now run the dag
