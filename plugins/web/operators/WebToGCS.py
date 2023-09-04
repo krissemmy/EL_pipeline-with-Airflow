@@ -69,7 +69,11 @@ class WebToGCSOperator(BaseOperator):
                 self.log.info(f"File written to temporary directory: {tmpdirname}/{self.destination_path}")
 
                 # read it back into a parquet file
-                df = pd.read_csv(f'{tmpdirname}/{self.destination_path}', encoding='utf-8', low_memory=False)
+                file_name1=f'{tmpdirname}/{self.destination_path}'
+                file_name1 = file_name1.replace('.csv.gz', '.csv')
+                open(file_name1, 'w').write(f'{tmpdirname}/{self.destination_path}')
+                df = pd.read_csv(file_name1, encoding="utf-8")
+                
                 file_name=self.destination_path
                 file_name = file_name.replace('.csv.gz', '.parquet')
 
