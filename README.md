@@ -1,6 +1,16 @@
 # EL_pipeline-with-Airflow
 ![Add a heading](https://github.com/krissemmy/EL_pipeline-with-Airflow/assets/119800888/66c012c5-9578-47ef-93d4-aa99e8b226b2)
 trash:///airflow_setup.md
+
+## Overview
+• An Extract and Load pipeline that gets NYC taxi data from DataTalks GitHub Repo and
+loads it into GCS Bucket.
+
+• It is scheduled to run monthly and will get the corresponding months data.
+
+• The data pipeline is built in a Docker container and executed with Celery executor so it
+makes the pipeline scalable.
+
 ## Setup (official)
 
 ### Requirements
@@ -99,7 +109,7 @@ docker-compose up airflow-init
 docker-compose up
 ```
 6. Inside plugins/web/operators folder is the python file with the WebToGCSOperator.
-7. Inside dags folder is load_yellow_tx_web_to_gcs.py file with all the neccessary dag code, you can make modifications to the time schedules and any other thing you feel like
+7. Inside dags folder is Web_to_GCS.py file with all the neccessary dag code, you can make modifications to the time schedules and any other thing you feel like
 7. To check if all containers are running fine and healthy, open a new terminal run the below
 ```bash
 docker ps
