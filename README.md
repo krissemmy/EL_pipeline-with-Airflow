@@ -109,7 +109,7 @@ docker-compose up airflow-init
 docker-compose up
 ```
 6. Inside plugins/web/operators folder is the python file with the WebToGCSOperator.
-7. Inside dags folder is Web_to_GCS.py file with all the neccessary dag code, you can make modifications to the time schedules and any other thing you feel like
+7. Inside dags folder is load_yellow_tx_web_to_gcs.py file with all the neccessary dag code, you can make modifications to the time schedules and any other thing you feel like
 7. To check if all containers are running fine and healthy, open a new terminal run the below
 ```bash
 docker ps
